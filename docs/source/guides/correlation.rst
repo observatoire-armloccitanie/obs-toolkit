@@ -1,4 +1,4 @@
-Corrélations et associations
+Corrélations
 ============================
 
 Module : :mod:`obskit.correlation`.

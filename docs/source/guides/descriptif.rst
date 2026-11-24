@@ -1,4 +1,4 @@
-Statistiques descriptives et tests
+Stats descriptives et tests
 ==================================
 
 Modules : :mod:`obskit.descriptif`, :mod:`obskit.inference`.

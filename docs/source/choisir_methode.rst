@@ -1,4 +1,4 @@
-Quelle méthode pour quelle question ?
+Quoi pour quoi ?
 =====================================
 
 .. list-table::
