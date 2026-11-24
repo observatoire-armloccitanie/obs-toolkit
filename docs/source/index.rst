@@ -56,33 +56,12 @@ d'accompagnement, la sortie de CEJ, la mobilité européenne…
    * - :mod:`obskit.visualisation`
      - Graphiques à la charte de l'Observatoire
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Prise en main
-
-   installation
-   demarrage
-   choisir_methode
+Pour commencer : :doc:`prise_en_main`. Pour une méthode précise : :doc:`guides/index`.
+Pour le détail de chaque fonction : :doc:`reference`.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Guides thématiques
+   :hidden:
 
-   guides/preparation
-   guides/descriptif
-   guides/correlation
-   guides/regression
-   guides/survie
-   guides/causalite
-   guides/factoriel
-   guides/ponderation
-   guides/ml
-   guides/visualisation
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Référence
-
-   api/index
-   validation
-   contribuer
+   prise_en_main
+   guides/index
+   reference
