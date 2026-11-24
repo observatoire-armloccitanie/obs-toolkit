@@ -1,0 +1,5 @@
+/* Ajustements légers de la charte (palette Observatoire) */
+:root {
+  --pst-color-primary: #2a78d6;
+}
+table.docutils td, table.docutils th { padding: 0.3rem 0.6rem; }

@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "obskit"
+version = "0.1.1"
+description = "Boîte à outils statistiques de l'Observatoire ARML Occitanie (Missions Locales) : descriptif, régressions, survie, causalité, analyses factorielles."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Observatoire ARML Occitanie" }]
+keywords = ["statistiques", "sociologie", "missions locales", "survie", "regression", "observatoire"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Programming Language :: Python :: 3.15",
+    "Natural Language :: French",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "License :: OSI Approved :: MIT License",
+]
+# Sous Python 3.15, on impose des versions qui publient des roues (wheels) cp315 :
+# pip n'essaie ainsi jamais de compiler numpy/scipy depuis les sources sous Windows.
+dependencies = [
+    "numpy>=1.24; python_version < '3.15'",
+    "numpy>=2.5.2; python_version >= '3.15'",
+    "pandas>=2.0; python_version < '3.15'",
+    "pandas>=3.1.1; python_version >= '3.15'",
+    "scipy>=1.11; python_version < '3.15'",
+    "scipy>=1.18.1; python_version >= '3.15'",
+    "matplotlib>=3.7; python_version < '3.15'",
+    "matplotlib>=3.11.2; python_version >= '3.15'",
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+ml = [
+    "scikit-learn>=1.3; python_version < '3.15'",
+    "scikit-learn>=1.9.1; python_version >= '3.15'",
+]
+docs = ["sphinx>=7", "pydata-sphinx-theme>=0.15", "sphinx-copybutton>=0.5"]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4",
+    "ruff>=0.4",
+    "scikit-learn>=1.3; python_version < '3.15'",
+    "scikit-learn>=1.9.1; python_version >= '3.15'",
+    "statsmodels>=0.14; python_version < '3.15'",
+    "statsmodels>=0.15.0; python_version >= '3.15'",
+    "lifelines>=0.27",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+filterwarnings = [
+    "error::DeprecationWarning:obskit",
+    "ignore:'penalty' was deprecated:FutureWarning",
+    "ignore:.*Surdispersion.*:UserWarning",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W"]
+ignore = ["E741", "E731"]
+
+[tool.coverage.run]
+source = ["obskit"]

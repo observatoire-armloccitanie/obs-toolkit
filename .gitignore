@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.env
+
+# Tests / couverture
+.pytest_cache/
+.coverage
+htmlcov/
+.ruff_cache/
+
+# Documentation générée
+docs/build/
+docs/source/api/generated/
+
+# Notebooks / éditeurs
+.ipynb_checkpoints/
+.vscode/
+.idea/
+
+# Données : ne jamais versionner de données individuelles i-milo
+data/
+donnees/
+*.xlsx
+*.xls
+*.csv
+*.parquet
+!examples/*.csv
+sorties/
